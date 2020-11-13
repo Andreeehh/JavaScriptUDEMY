@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8"> 
+    </head>
+    
+    <body>
+        <div class="container">
+            <h1>Curso Javascript Completo 2018</h1>
+            <p>AAAAAaaaaaaaa aaaaaaaaaaaa<b>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaa</b> aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAA q coisa louca</p>
+            <p>AAAAAAAAAAAAA q coisa louca</p>
+            <p>AAAAAAAAAAAAA q coisa louca</p>
+            
+        </div>
+                
+        <script>
+            (function(){
+                'use strict';
+                window.addEventListener('load',function(){//espera a página carregar p/ executar o script
+                    var $paragrafos = document.querySelectorAll('p');
+                    console.log($paragrafos[0].textContent.length);
+                    var x = 0;
+                    while($paragrafos[x]){
+                        $paragrafos[x].innerHTML = formatarTexto($paragrafos[x].innerHTML);                        
+                        x++;
+                    }
+                    function formatarTexto(text){
+                        var numeroMax = 200;
+                        if(text.length>numeroMax){
+                            var subTexto = text.slice(0,numeroMax) + '...'
+                            return subTexto;
+                        } else {
+                            return text;
+                        }
+                    }
+                })
+                
+            })();
+            
+            
+        </script>
+        
+    </body>
+</html>

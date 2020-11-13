@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8"> 
+    </head>
+    
+    <body>
+        <div class="container">
+            <h1>Curso Javascript Completo 2018</h1>
+            
+        </div>
+                
+        <script>
+            (function(){
+                'use strict';
+                var nome= 'Andre';
+                var novoNome = setaNome(nome);
+                function setaNome(nome){
+                    var ultimoEspaco = nome.lastIndexOf(' ');
+                    if(ultimoEspaco === -1){
+                        return nome;
+                    }else{
+                        var ultimoCaractere = nome.lastIndexOf('');
+                        console.log(ultimoCaractere);
+                        console.log(ultimoEspaco);
+                        var ultimoNome = nome.slice(ultimoEspaco+1, ultimoCaractere);
+                        console.log(ultimoNome);
+                        return ultimoNome +", "+nome.slice(0,ultimoEspaco);
+                    }
+                }
+                console.log(novoNome);
+            })();
+            
+            
+        </script>
+        
+    </body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">      
+          
+    </head>
+    
+    <body>
+        <div class="container">
+            <h1>Curso Javascript Completo 2018</h1>
+            <textarea id="msg" cols="50" rows="10" maxlength="120"></textarea>
+            <div style="display: none;" id="restaContainer"> Restam <span id="resta"></span> caracteres
+            </div>
+        </div>
+                
+        <script>
+            (function(){
+                'use strict';
+                
+                var $resta = document.getElementById('resta');
+                var $txtMsg = document.getElementById('msg');
+                var $restaContainer = document.getElementById('restaContainer');
+                
+                $restaContainer.style.display = 'block';
+                
+                var maxima = $txtMsg.maxLength;
+                
+                mostrarCaracteresRestantes(maxima);
+                $txtMsg.addEventListener('input', checkLength);
+                
+                function checkLength(e){
+                    var numeroLetrasDigitadas = this.value.length;
+                    var caracteresRestantes = parseInt(maxima) - parseInt(numeroLetrasDigitadas);
+                    mostrarCaracteresRestantes(caracteresRestantes);
+                    if(caracteresRestantes === 10){
+                        alert("Restam 10 caracteres");
+                    }
+                    if(caracteresRestantes === 0){
+                        alert("Fim dos caracteres");                        
+                    }
+                }
+                
+                function mostrarCaracteresRestantes(n){
+                    $resta.textContent = n;
+                }
+            })();
+            
+        </script>
+        
+    </body>
+</html>
