@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8"> 
+        <style>
+            .destaque{
+                padding: 15px;
+                display: inline-block;
+                background: yellow;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="container">
+            <h1>Curso Javascript Completo 2018</h1>
+            
+            
+        </div>
+                
+        <script>
+            (function(){
+                'use strict';
+                var n = 0;
+                function somaUm(){
+                    console.log("n = ", ++n);//soma um no n e dps mostra
+                    if(n>5){
+                        clearInterval(intervalo);//passa o nome da variavel atribuida, ou o ID do setInterval
+                    }
+                }
+                setTimeout(somaUm,1000);//executa uma vez a função, depois de x milessegundos passados por parametro
+                
+                var intervalo = setInterval(somaUm,2000);//executa função a cada intervalo passado por parametro
+                console.log(intervalo); //ID que identifica o setInterval
+                
+                
+            })();
+            
+            
+        </script>
+        
+    </body>
+</html>

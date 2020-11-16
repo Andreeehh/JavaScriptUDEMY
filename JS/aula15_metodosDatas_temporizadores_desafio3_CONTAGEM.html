@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8"> 
+        <style>
+            .destaque{
+                padding: 15px;
+                display: inline-block;
+                background: yellow;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="container">
+            <h1>Curso Javascript Completo 2018</h1>
+            <div id='div'> Contagem regressiva para o seu aniversário: <spam id='spam'></spam></div>
+            
+        </div>
+                
+        <script>
+            (function(){
+                'use strict';
+                setInterval(mostraHoras, 1000);
+                
+                                
+                mostraHoras();
+                function mostraHoras(){
+                    var $spam = document.getElementById('spam');
+                    var diaAtual = new Date();
+                    var aniversario = new Date(diaAtual.getFullYear(),10,10);
+                    var diaAtualTS = diaAtual.getTime();
+                    var aniversarioTS = aniversario.getTime();
+
+                    if(aniversarioTS<diaAtualTS){
+                        aniversario.setFullYear(diaAtual.getFullYear()+1);
+                        var aniversarioTS = aniversario.getTime();
+                    }
+                    var restamTS = aniversario - diaAtual;
+                    var ONE_SECOND = 1000;
+                    var ONE_MINUTE = 60*ONE_SECOND;
+                    var ONE_HOUR = 60*ONE_MINUTE;
+                    var ONE_DAY = 24 * ONE_HOUR;
+
+                    var diasRestantes = parseInt(restamTS / ONE_DAY);
+                    restamTS = restamTS - diasRestantes * ONE_DAY;
+
+                    var horasRestantes= parseInt(restamTS/ONE_HOUR);
+                    restamTS = restamTS - horasRestantes *ONE_HOUR;
+
+                    var minutosRestantes= parseInt(restamTS/ONE_MINUTE);
+                    restamTS = restamTS - minutosRestantes * ONE_MINUTE;
+
+                    var segundosRestantes = parseInt(restamTS/ONE_SECOND);
+                    
+                    var d = diasRestantes < 10? "0"+diasRestantes : diasRestantes;
+                    var h = horasRestantes<10? "0"+horasRestantes: horasRestantes;
+                    var m = minutosRestantes<10? "0"+minutosRestantes: minutosRestantes;
+                    var s = segundosRestantes<10 ? "0"+segundosRestantes: segundosRestantes;
+                    $spam.textContent = (d+ " dias, "+ h + ":" + m + ":" + s+" (h/m/s)");
+                }
+                
+                
+            })();
+            
+            
+        </script>
+        
+    </body>
+</html>

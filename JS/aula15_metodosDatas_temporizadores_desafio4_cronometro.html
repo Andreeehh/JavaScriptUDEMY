@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8"> 
+        <style>
+            .destaque{
+                padding: 15px;
+                display: inline-block;
+                background: yellow;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="container">
+            <h1>Curso Javascript Completo 2018</h1>
+            <input id="text">
+            <button id="iniciar">Iniciar</button>
+            <button id="pausar">Pausar</button>
+            <button id="reset">Resetar</button>
+            
+        </div>
+                
+        <script>
+            (function(){
+                'use strict';
+                var $btnIniciar = document.getElementById('iniciar');
+                var $btnPausar = document.getElementById('pausar');
+                var $btnResetar = document.getElementById('reset');
+                var $cronometro = document.getElementById('text');
+                
+                $btnIniciar.addEventListener('click',start);
+                $btnPausar.addEventListener('click',pause);
+                $btnResetar.addEventListener('click',reset);
+                var intervalo = null;
+                var msClickIniciar = 0;
+                var msClickPausar = 0;
+                var msTempoDecorrido = 0;
+                var rodando = false;
+                
+                
+                function start(){
+                    if(rodando){
+                        return;                        
+                    } 
+                    reset();
+                    msClickIniciar = Date.now();
+                    startCronometro();
+                    rodando = true;                    
+                }
+                
+                function pause(){
+                    if(!$cronometro.value) return;
+                    if(rodando){
+                        clearInterval(intervalo);
+                        msClickPausar = Date.now();
+                        msTempoDecorrido += (msClickPausar-msClickIniciar);
+                    } else {
+                        msClickIniciar = Date.now();
+                        startCronometro(msTempoDecorrido);                        
+                    }
+                    rodando = !rodando;
+                }
+                
+                function reset(){
+                    msClickIniciar = 0;
+                    msClickPausar = 0;
+                    msTempoDecorrido = 0;
+                    rodando = false;
+                    clearInterval(intervalo);
+                    $cronometro.value = "";
+                }
+                
+                function startCronometro(tempoDecorrido){
+                    var _ms = tempoDecorrido || 0;
+                    intervalo = setInterval(function(){
+                        var msAgora = Date.now();
+                        var diferenca = msAgora - msClickIniciar;
+                        $cronometro.value = formataMs(diferenca + _ms);
+                    },10)                    
+                }
+                
+                function formataMs(ms){
+                    
+                    const ONE_MIN = 60000;
+                    const ONE_SEC = 1000;
+                    
+                    
+                    if(ms<1000){
+                        return "00:00:"+ms;
+                    }else if (ms<ONE_MIN){
+                        var s = parseInt(ms/ONE_SEC);
+                        var c = ms - (s*ONE_SEC);
+                        if(s<10){
+                            return "00:0"+s+":"+c;    
+                        }else{
+                            return "00:"+s+":"+c;                            
+                        }
+                    }else{
+                        var min = parseInt(ms/ONE_MIN);
+                        var sec = parseInt((ms - (min*ONE_MIN))/ONE_SEC);
+                        var cent = ms -(min*ONE_MIN)- (sec*ONE_SEC);
+                        if(min<10){
+                            if(sec<10){
+                                return "0"+min+":0"+sec+":"+cent;
+                            }else{
+                                return "0"+min+":"+sec+":"+cent;
+                            }                            
+                        }else{
+                            if(sec<10){
+                                return min+":0"+sec+":"+cent;
+                            }else{
+                               return min+":"+sec+":"+cent; 
+                            }
+                        }
+                        
+                    }
+                }
+                
+                
+            })();
+            
+            
+        </script>
+        
+    </body>
+</html>

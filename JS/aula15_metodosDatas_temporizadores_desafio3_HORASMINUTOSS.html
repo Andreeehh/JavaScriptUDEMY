@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8"> 
+        <style>
+            .destaque{
+                padding: 15px;
+                display: inline-block;
+                background: yellow;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="container">
+            <h1>Curso Javascript Completo 2018</h1>
+            <div id='div'> Hora correta: <spam id='spam'></spam></div>
+            
+        </div>
+                
+        <script>
+            (function(){
+                'use strict';
+                setInterval(mostraHoras, 1000);
+                var $spam = document.getElementById('spam'); 
+                mostraHoras();
+                
+                var str ='';
+                function mostraHoras(){
+                    var horas = new Date();
+                    var h = horas.getHours()<10? "0"+horas.getHours(): horas.getHours();
+                    var m = horas.getMinutes()<10? "0"+horas.getMinutes(): horas.getMinutes();
+                    var s = horas.getSeconds()<10 ? "0"+horas.getSeconds(): horas.getSeconds();
+                    $spam.textContent = (h+":"+m+":"+s);
+                }
+                
+                
+            })();
+            
+            
+        </script>
+        
+    </body>
+</html>
