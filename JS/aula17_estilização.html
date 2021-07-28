@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div style="background-color: red;">elemento qualquer</div>
+    <script>
+        let div = document.querySelector("div");
+        //classList.add adiciona classes, classList.remove remove
+        div.classList.add("teste1");
+        div.classList.add("teste2");
+        //className 
+        div.className // retorna as classes
+        div.className = "teste3"; //renomeia as classes para uma unica classe setada valaor
+        //getComputedStyle
+        console.log(getComputedStyle(div));//Mostra todos os elementos
+        console.log(getComputedStyle(div).backgroundColor); // mostrar elementos específicos
+        //tamanho e posição do elemento em relação ao documento
+        console.log(div.offsetHeight);//altura
+        console.log(div.offsetWidth);//largura
+        console.log(div.offsetLeft);//cartesiano esquerda
+        console.log(div.offsetTop);//cartesiano cima
+        //Posição em relação a viewport
+        div.getBoundingClientRect();// em relação a área visível
+    </script>
+</body>
+</html>
