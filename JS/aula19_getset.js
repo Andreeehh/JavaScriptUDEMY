@@ -33,7 +33,7 @@ console.log(cachorro.tipo)//retorna mamifero ainda, pois a linha anterior não p
     const tiposPermitidos = ["mamifero","anfibio","reptil"]
 
     const gato = {
-        name:"mingau auau",
+        name:"mingau miau",
         get tipo(){
             return tipo
         },
