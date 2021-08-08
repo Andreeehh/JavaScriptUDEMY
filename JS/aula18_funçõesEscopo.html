@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>clica</button>
+    <script src = "aula18_funçõesEscopo.js"></script>
+    <script>
+        const btn = document.querySelector("button")
+
+        const _this = this
+        btn.addEventListener("click", function(){
+            console.log("---------- this do click função normal")
+            console.log(this)//this quando vem de uma função normal, ou uma declaration
+            console.log(_this)//constate this declarada fora da função como this do escopo global, permanece this
+            console.log(this === _this)//false, this do objeto é diferente do this do escopo global
+        })
+        btn.addEventListener("click", () => {
+            console.log("---------- this do click Arrow function")
+            console.log(this)//this quando vem de uma arrow function, ele bloqueia o objeto ao qual a função esta atrelada, ele não sofre alteração, voltando o objeto anteriro
+            console.log(_this)
+            console.log(this === _this)//true, _this do escopo global igual a this passada por arrow function, onde não sofre alteração 
+        })
+    </script>
+</body>
+</html>

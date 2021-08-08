@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">      
+          
+    </head>
+    
+    <body>
+        <div class="container">
+            <h1>Curso Javascript Completo 2018</h1>
+            <button>botão 1</button>
+            <button>botão 2</button>
+            <button>botão 3</button>
+        </div>
+                
+        <script>
+            (function(){
+                'use strict';
+                
+                var $btns = document.getElementsByTagName('button');
+                var x = 0;
+                while($btns[x]){
+                    $btns[x].addEventListener('click', clicou);
+                    x++
+                }
+                function clicou(){
+                    console.log(this.textContent);
+                }
+            })();
+            
+            
+        </script>
+        
+    </body>
+</html>

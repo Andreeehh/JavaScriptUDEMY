@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Curso Javascript Completo 2018</h1>
+        
+        <input type = 'text' id = 'txtNome' ><button onclick = "escreve()">Só clicka</button>
+        <div id="msg"></div>
+        
+        <script>
+            
+            function escreve(){
+                var nome = txtnome2.value;
+                document.querySelector('#msg').innerHTML = "Bem-vindo, <b>" + nome + "</b>";
+            }
+            var txtnome2 = document.querySelector("#txtNome");
+            // innerHTML usa das propriedades do HTML(reflete na visualização da página), textContent transforma em texto puro
+            
+        </script>
+        
+    </body>
+</html>

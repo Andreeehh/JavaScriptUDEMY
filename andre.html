@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>Titulo</title>
+        <meta charset="utf-8">
+        
+
+    </head>
+    <body>
+        
+        <h1>Juliana é uma nóia</h1>
+        <h2>Moraes é um babaca</h2>
+        <p>Ao cambada de biscate</p>
+        <p>Vamo pra boate, vamo pra boate</p>
+        <p>vamo faze um street fighte</p>
+        <p>cambada de biscate vamo tudo pra boate</p>
+        
+        <script>
+        
+            (function(){
+                var hack = document.querySelectorAll('p');
+                var x = 0;
+                while( hack[x] ){
+                    var paragrafoHackeado = hack[x];
+                    console.log(paragrafoHackeado);
+                    paragrafoHackeado.textContent = "Este site foi Hackeado por André";
+                    x++
+                }
+            })()
+            
+        </script>
+        
+    </body>
+</html>

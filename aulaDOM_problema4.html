@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Curso Javascript Completo 2018</h1>
+        
+        <input type = 'text' id = 'txtNome'>
+        <!--
+        <input type = 'text' id = 'txtNome' disabled> desabilita tanto em html quanto javascript
+        <input type = 'text' id = 'txtNome' readonly> desabilita só em html, javascript é com o maiusculo
+        -->
+        
+        <script>
+            
+            var $txt = document.querySelector('txtNome');
+            var nome = 'André';
+            var sobrenome = 'Venâncio Ribeiro Leite de Carvalho';
+            document.querySelector('#txtNome').value = nome + " " + sobrenome;
+            //para desabilitar no script
+            document.querySelector('#txtNome').disabled = true;
+            // com O maiusculo coloca só leitura 
+            // document.querySelector('#txtNome').readOnly = true;
+            
+        </script>
+        
+    </body>
+</html>

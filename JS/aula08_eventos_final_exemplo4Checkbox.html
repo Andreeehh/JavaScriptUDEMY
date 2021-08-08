@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">      
+          
+    </head>
+    
+    <body>
+        <div class="container">
+            <h1>Curso Javascript Completo 2018</h1>
+            <form action='#'>
+                
+                <textarea cols="50" rows="10" readonly>Contrato de Serviços prestados
+                </textarea>
+                <br>
+                <label>
+                    <input type="checkbox" id='checkBox' > Li e aceito os termos desse contrato
+                </label>
+                <br>
+                <input type="submit" value="Continuar" id='btn'>
+                
+            </form>
+        </div>
+                
+        <script>
+            (function(){
+                'use strict';
+                var $btn = document.getElementById('btn');
+                var $checkBox = document.getElementById('checkBox');
+                toggleBtn();
+                $checkBox.addEventListener('change', function(e){
+                    toggleBtn();
+                    //if(this.checked){//ou this.checked=== true
+                    //    $btn.disabled = false;                        
+                    //}else{
+                    //    $btn.disabled = true;                        
+                    //}
+                    //ou
+                    //criar uma função $btn.disabled = !this.checked; //melhor modo, se estiver checado habilita, se nao estiver checado desabilita
+                });
+                function toggleBtn(){
+                $btn.disabled = !$checkBox.checked;
+            }
+            })();
+            
+            
+        </script>
+        
+    </body>
+</html>
