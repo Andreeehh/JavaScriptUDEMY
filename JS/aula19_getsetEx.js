@@ -29,7 +29,7 @@
     let _usuarios = []
     this.pessoa = {
         get usuarios(){
-            return _usuarios//retorna a array
+            return [..._usuarios]//retorna a copia da array, igual a return [].concat(_usuarios), para proteger a array original
         },
         get lastUsuario(){
             if(_usuarios.length){
