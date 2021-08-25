@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Get envia os dados na url -->
+    <form method="GET"><!--Com o method get é obrigatório os inputs terem uma propriedade name-->
+        Usuário
+        <input type="text" name="variavel_usuario" /><!--atributo name sera guardado o valor do input na nuvem-->
+        <br/>
+        Senha
+        <input type="password" name="variavel_senha" />
+        <!-- <br/> -->
+        <!-- <input type="button" value ="Button" /> -->
+        <br/>
+        <input type="submit" value ="Não clique" /><!--Repassa os valores do forms para nuvem-->
+    </form>
+    <!-- Post não envia os dados na url -->
+    <form method="POST"><!--Com o method get é obrigatório os inputs terem uma propriedade name-->
+        Usuário
+        <input type="text" name="variavel_usuario" /><!--atributo name sera guardado o valor do input na nuvem-->
+        <br/>
+        Senha
+        <input type="password" name="variavel_senha" />
+        <!-- <br/> -->
+        <!-- <input type="button" value ="Button" /> -->
+        <br/>
+        <input type="submit" value ="Não clique" /><!--Repassa os valores do forms para nuvem-->
+    </form>
+</body>
+</html>
