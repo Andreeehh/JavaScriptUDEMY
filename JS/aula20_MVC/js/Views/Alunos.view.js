@@ -1,9 +1,9 @@
 class AlunosView{
-    constructor(tableDOM){
+    constructor(tableDOM, materias){
         this.tableList = tableDOM
         this.tableHeader = this.tableList.querySelector("thead")
         this.tableBody = this.tableList.querySelector("tbody")
-        this.materias = ["portugues","matematica","historia","ciencias"]
+        this.materias = materias
         this.renderHeader()
     }
     renderHeader(){
@@ -23,7 +23,7 @@ class AlunosView{
             this.tableBody.innerHTML = ""//zera o valor dele html para quando adicionar novo campo, ele começar limpo
             alunos.forEach(aluno =>{//cria um loop para a constante alunos passando o objeto como parametro
                 const htmlBody = document.createElement("tr")//adiciona um elemento html de tag tr
-                let htmlMedias = `<td>${aluno.nome}</td>`//concatena o nome do aluno com tag td
+                let htmlMedias = `<td><a href="edit.html?id=${aluno._id}">${aluno.nome}</a></td>`//concatena o nome do aluno com tag td, e cria um hyperlink para ele ser editável
                 let encontrado = false
 
                 this.materias.forEach(materia => {//loop para cada matéria passando matéria como parametro

@@ -10,4 +10,8 @@ class AlunosController{
         this.view.render(this.service.alunos)
     }
 
+    search(name){
+        const data = this.service.search(name)//retorna o aluno com nome com parte igual passado por parametro
+        this.view.render(data)//renderiza a pagina novamente com apenas os alunos recuperados acima
+    }
 }

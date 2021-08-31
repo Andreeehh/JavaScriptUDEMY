@@ -13,11 +13,17 @@ class AlunosService{
     }
 
     edit(aluno){
-        return aluno
+        aluno.generateAvarage()
+        this.updateLocalStorage()
     }
 
     serchById(id){
         return this.alunos.find(aluno => aluno._id === id)//retorna o aluno que tem o id passado por parametro igual sua propriedade id
+    }
+
+    search(name){
+        console.log(this.alunos.filter(aluno => aluno.nome.indexOf(name) >= 0 ))//filtrando dos objetos alunos que contem todos os alunos, apenas aqueles que tem uma parte do nome igual ao que foi passado por parametro
+        return this.alunos.filter(aluno => aluno.nome.indexOf(name) >= 0 )
     }
 
     updateLocalStorage(){//função criada para armazenar os alunos criados na página no local storage 
