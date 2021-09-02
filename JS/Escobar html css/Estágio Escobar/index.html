@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .dev{
+            background-color: orange;
+            width: 200px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid;
+        }
+        form{
+            background-color: yellow;
+            width: 200px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid; 
+        }
+        body{
+            background-color: black;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <form>
+            <label>Digite o CPF</label>
+            <input type="text" maxlength="14" id="CPF" placeholder="Ex.: 000.000.000-00">
+            <br>
+            <label>Digite o Telefone</label>
+            <input type="text" maxlength="14" id="tel" placeholder="Ex.: (00) 0000-0000">
+        </form>
+    </div>
+    <div = class="dev">
+        <label>Desenvolvido por</label>
+        <br>
+        <label>André Carvalho</label>
+    </div>
+    <script>
+        (function(){
+            document.querySelector("#CPF").addEventListener("input",function(){
+                if(this.value.length == 3){
+                    this.value = this.value + "."
+                }
+                if(this.value.length == 7){
+                    this.value = this.value + "."
+                }
+                if(this.value.length == 11){
+                    this.value = this.value + "-"
+                }
+            })
+            document.querySelector("#tel").addEventListener("input",function(){
+                if(this.value.length == 1){
+                    this.value = "(" + this.value 
+                }
+                if(this.value.length == 3){
+                    this.value = this.value + ")"
+                }
+                if(this.value.length == 9){
+                    this.value = this.value + "-"
+                }
+            })
+        })()
+    </script>
+</body>
+</html>
