@@ -3,21 +3,31 @@
 <head>
     <style>
         .dev{
-            background-color: orange;
-            width: 200px;
+            
             margin-left: auto;
             margin-right: auto;
-            border: 1px solid;
         }
-        form{
-            background-color: yellow;
-            width: 200px;
-            margin-left: auto;
-            margin-right: auto;
-            border: 1px solid; 
+        body.center-form {
+            min-height: 100vh;
         }
-        body{
-            background-color: black;
+
+        div.center-form {
+            position: relative;
+            min-height: 100vh;
+        }
+
+        div.center-form > form {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateY(-50%) translateX(-50%);
+        }
+        header{
+            background-image: url(../Estágio\ Escobar/bg-3.jpg);
+            height: 100vh;
+            background-position: right center;
+            background-size: cover;
+            border-top: 1px solid transparent;
         }
     </style>
     <meta charset="UTF-8">
@@ -26,20 +36,48 @@
     <title>Document</title>
 </head>
 <body>
-    <div>
-        <form>
-            <label>Digite o CPF</label>
-            <input type="text" maxlength="14" id="CPF" placeholder="Ex.: 000.000.000-00">
-            <br>
-            <label>Digite o Telefone</label>
-            <input type="text" maxlength="14" id="tel" placeholder="Ex.: (00) 0000-0000">
-        </form>
-    </div>
-    <div = class="dev">
-        <label>Desenvolvido por</label>
-        <br>
-        <label>André Carvalho</label>
-    </div>
+    <header class="hero" data-paralax data-p-velocity="0.8">
+        <center>
+            <div class="center-form">
+                <form>
+                <label for="nome">
+                    <label>Digite o CPF</label>
+                    <input type="text" maxlength="14" id="CPF" placeholder="Ex.: 000.000.000-00">
+                    <br>
+                    <label>Digite o Telefone</label>
+                    <input type="text" maxlength="14" id="tel" placeholder="Ex.: (00) 0000-0000">
+                </form>
+            </div>
+        </center>
+        
+    </header>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur aperiam ipsum harum, deleniti quaerat voluptatum magni. Dignissimos sequi beatae natus a odio ut accusamus, quos deserunt ipsa sapiente soluta corrupti!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur aperiam ipsum harum, deleniti quaerat voluptatum magni. Dignissimos sequi beatae natus a odio ut accusamus, quos deserunt ipsa sapiente soluta corrupti!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur aperiam ipsum harum, deleniti quaerat voluptatum magni. Dignissimos sequi beatae natus a odio ut accusamus, quos deserunt ipsa sapiente soluta corrupti!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur aperiam ipsum harum, deleniti quaerat voluptatum magni. Dignissimos sequi beatae natus a odio ut accusamus, quos deserunt ipsa sapiente soluta corrupti!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur aperiam ipsum harum, deleniti quaerat voluptatum magni. Dignissimos sequi beatae natus a odio ut accusamus, quos deserunt ipsa sapiente soluta corrupti!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur aperiam ipsum harum, deleniti quaerat voluptatum magni. Dignissimos sequi beatae natus a odio ut accusamus, quos deserunt ipsa sapiente soluta corrupti!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur aperiam ipsum harum, deleniti quaerat voluptatum magni. Dignissimos sequi beatae natus a odio ut accusamus, quos deserunt ipsa sapiente soluta corrupti!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur aperiam ipsum harum, deleniti quaerat voluptatum magni. Dignissimos sequi beatae natus a odio ut accusamus, quos deserunt ipsa sapiente soluta corrupti!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur aperiam ipsum harum, deleniti quaerat voluptatum magni. Dignissimos sequi beatae natus a odio ut accusamus, quos deserunt ipsa sapiente soluta corrupti!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur aperiam ipsum harum, deleniti quaerat voluptatum magni. Dignissimos sequi beatae natus a odio ut accusamus, quos deserunt ipsa sapiente soluta corrupti!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur aperiam ipsum harum, deleniti quaerat voluptatum magni. Dignissimos sequi beatae natus a odio ut accusamus, quos deserunt ipsa sapiente soluta corrupti!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur aperiam ipsum harum, deleniti quaerat voluptatum magni. Dignissimos sequi beatae natus a odio ut accusamus, quos deserunt ipsa sapiente soluta corrupti!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur aperiam ipsum harum, deleniti quaerat voluptatum magni. Dignissimos sequi beatae natus a odio ut accusamus, quos deserunt ipsa sapiente soluta corrupti!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur aperiam ipsum harum, deleniti quaerat voluptatum magni. Dignissimos sequi beatae natus a odio ut accusamus, quos deserunt ipsa sapiente soluta corrupti!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur aperiam ipsum harum, deleniti quaerat voluptatum magni. Dignissimos sequi beatae natus a odio ut accusamus, quos deserunt ipsa sapiente soluta corrupti!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur aperiam ipsum harum, deleniti quaerat voluptatum magni. Dignissimos sequi beatae natus a odio ut accusamus, quos deserunt ipsa sapiente soluta corrupti!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur aperiam ipsum harum, deleniti quaerat voluptatum magni. Dignissimos sequi beatae natus a odio ut accusamus, quos deserunt ipsa sapiente soluta corrupti!</p>
+    <footer>
+        <div = class="dev">
+            <center>
+                <label>Desenvolvido por</label>
+                <br>
+                <label>André Carvalho</label>
+            </center>
+        </div>
+    </footer>
+    <script src="/Escobar html css/Estágio Escobar/app.js"></script>
     <script>
         (function(){
             document.querySelector("#CPF").addEventListener("input",function(){
