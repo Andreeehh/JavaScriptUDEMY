@@ -1,0 +1,19 @@
+Ajax = Xml e Javascript assincronos
+Necessidade de comunicação cliente servidor de maneira assincrona
+
+síncrono: Código é executado na ordem que apareno no arquivo .Javascript
+é bloqueante
+enquanto o bloco de código não é executado, o usuário não consegue interagir com a interface gráfica
+
+Assíncrono: Não precisa ser executado na mesma ordem que aparece no Código
+não é bloqueante
+
+XML: arquivo que transporta dados, substituido pelo formato Json
+Json: Estrutura similar ao objeto no JS, nome de propriedade entre aspas duplas, sem virgulas depois do ultimo elemento do array
+
+XMLHttpRequest
+Objeto que contém métodos que fazem conexão com o servidor
+1 Instaciar objeto
+2 open()
+3 send()
+4 Listener onreadystatechange
