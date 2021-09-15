@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style type="text/css">
+        div {
+            background-color: green;
+            border: 1px dashed black;
+            text-align: left;
+            margin: 5px;
+        }
+
+        .divCentralizada {
+            background-color: pink;
+            text-align: center;
+            color: green;
+        }
+
+        form {
+            border: 1px solid #151515;
+            border-radius: 5px;
+            width: 300px;
+            margin-top: 20px;
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 10px;
+        }
+
+        .form {
+            border: none;
+            background: transparent;
+            border-bottom: 1px solid aqua;
+            border-top: 2px dashed green;
+        }
+
+        label {
+            font-weight: bold;
+            background: orange;
+        }
+
+        .btnEnviar {
+            background: rgba(81, 157, 234, 1);
+            color: white;
+            border-radius: 5px;
+            border: none;
+            padding: 5px;
+            border-bottom: 1px solid #ccc;
+            border-right: 1px solid #ccc;
+            border-left: 1px solid #000;
+            border-top: 1px solid #000;
+        }
+
+        .circulo {
+            background-color: violet;
+            border-radius: 100px;
+            width: 200px;
+            height: 200px;
+            border: black 1px;
+            margin: auto;
+            display: flex;
+        }
+        .circuloInterior {
+            background-color: red;
+            border-radius: 50px;
+            width: 100px;
+            height: 100px;
+            border: black 1px;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div>Div 01</div>
+    <div class="divCentralizada">Div 02</div>
+    <div>Div 03</div>
+    <form>
+        <div class="form">
+            <label>Nome:<input type="text"></label>
+        </div>
+        <div class="form">
+            <label>Sobrenome:<input type="text"></label>
+        </div>
+        <input type="submit" value="Enviar" class="btnEnviar">
+    </form>
+    <div class="circulo">
+        <div class="circuloInterior"></div>
+    </div>
+</body>
+
+</html>
