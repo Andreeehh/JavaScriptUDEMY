@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Formulário de Cadastro de Clientes</title>
+</head>
+
+<body>
+    <p>Digite, por favor, os dados abaixo:</p>
+    <form method="post" action="recebedadoscliente.php">
+        Nome: <input type="text" size="40" name="nome"><br>
+        Rua: <input type="text" size="60" name="rua"><br>
+        <p>Cidade:
+            <select name="cidade" size="1">
+                <option>Bauru</option>
+                <option>São Manuel</option>
+                <option>Botucatu</option>
+            </select>
+        </p>
+        <p>
+            Sexo:<br>
+            <input type="radio" name="sexo" value="M">Masculino<br>
+            <input type="radio" name="sexo" value="F">Feminino<br>
+        </p>
+        <p>Sugestões:</p>
+        <textarea name="sugestoes" rows="5" cols="40"></textarea>
+        <p><input type="submit" name="envia" value="Enviar Formulário">
+            <input type="reset" name="apaga" value="Apagar">
+        </p>
+    </form>
+</body>
+
+</html>

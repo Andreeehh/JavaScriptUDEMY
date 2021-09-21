@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Digite, por favor, os dados abaixo:</p>
+    <form method="post" action="pedido.php">
+        Nome: <input type="text" size="40" name="nome"><br>
+        Idade: <input type="number" min="5" max="90" name="idade"><br>
+        CPF: <input type="text" size="14" name="cpf" placeholder="EX.: 000.000.000-00"><br>
+        <p>
+            Sexo:<br>
+            <input type="radio" name="sexo" value="M">Masculino<br>
+            <input type="radio" name="sexo" value="F">Feminino<br>
+        </p>
+        Rua: <input type="text" size="60" name="rua"><br>
+        CEP: <input type="text" size="9" name="cep" placeholder="EX.: 00000-000"><br>
+        <p>Cidade:
+            <select name="cidade" size="1">
+                <option>Bauru</option>
+                <option>São Manuel</option>
+                <option>Botucatu</option>
+                <option>Iacanga</option>
+            </select>
+        </p>
+        <p>Tipo de roupa
+            <select name="roupa" size="1">
+                <option>Camisa</option>
+                <option>Camiseta</option>
+                <option>Calça</option>
+                <option>Shorts</option>
+            </select>
+        </p>
+        <p>Tamanho
+            <select name="tamanho" size="1">
+                <option>P</option>
+                <option>M</option>
+                <option>G</option>
+                <option>GG</option>
+            </select>
+        </p>
+        
+        <p>Observações:</p>
+        <textarea name="obs" rows="5" cols="40"></textarea>
+        <p><input type="submit" name="envia" value="Enviar Formulário">
+            <input type="reset" name="apaga" value="Apagar">
+        </p>
+    </form>
+</body>
+
+</html>
