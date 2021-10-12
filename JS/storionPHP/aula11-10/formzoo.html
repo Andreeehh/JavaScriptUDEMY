@@ -1,0 +1,42 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Uma simples consulta ao Banco de Dados</title>
+    <style type="text/css">
+        body {
+            background-color: #F0E68C
+        }
+
+        h2 {
+            font-family: arial, sans-serif;
+            color: blue
+        }
+
+        input {
+            background-color: blue;
+            color: yellow;
+            font-weight: bold
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Consulta no banco de Dados MySql.</h2>
+    <form method="post" action="zoo.php">
+        <div>
+            <p>Selecionar um campo no display:
+                <!-- campo para selecionar uma opção desejada -->
+                <!-- uma consulta com estrutura for -->
+                <select name="selecionar">
+                    <option selected="selected">ID</option>
+                    <option>nome</option>
+                    <option>especie</option>
+                    <option>habitat</option>
+                </select>
+            </p>
+            <input type="submit" value="Enviar consulta" />
+        </div>
+    </form>
+</body>
+
+</html>
