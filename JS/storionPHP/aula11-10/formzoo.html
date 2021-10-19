@@ -2,6 +2,9 @@
 
 <head>
     <title>Uma simples consulta ao Banco de Dados</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style type="text/css">
         body {
             background-color: #F0E68C
@@ -17,6 +20,11 @@
             color: yellow;
             font-weight: bold
         }
+        .textField{
+            background-color: white;
+            color: black;
+            border-radius: 2px;
+        }
     </style>
 </head>
 
@@ -25,8 +33,6 @@
     <form method="post" action="zoo.php">
         <div>
             <p>Selecionar um campo no display:
-                <!-- campo para selecionar uma opção desejada -->
-                <!-- uma consulta com estrutura for -->
                 <select name="selecionar">
                     <option selected="selected">ID</option>
                     <option>nome</option>
@@ -35,6 +41,18 @@
                 </select>
             </p>
             <input type="submit" value="Enviar consulta" />
+        </div>
+    </form>
+    <p>Ou </p>
+    <form method="post" action="zoo2.php">
+        <div>
+            <p> Digitar a espécie a ser localizada:
+            
+                <input type = "text" name = "especie" class="textField" />
+                    
+                    
+                <input type = "submit" value = "Enviar consulta" />
+            </p>
         </div>
     </form>
 </body>
