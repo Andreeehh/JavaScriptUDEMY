@@ -1,0 +1,12 @@
+.btn-vermelhao {
+    background-color: yellow;
+    border-color: pink;
+    color: aqua
+}
+
+.btn:hover { 
+    padding: 1px;
+    background-color: gray;
+    border-color: pink;
+    color: blue
+}
