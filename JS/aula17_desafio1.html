@@ -223,14 +223,8 @@
 
             function destacaMenu(){
                 let positions = [...links].map(link => {
-                    //console.log("link",link);
-                    //console.log("link.href",link.href);
-                    //console.log("link.getattribute(href)",link.getAttribute("href"));
                     let href = link.getAttribute("href");
-                    //console.log("link",document.querySelector(link.getAttribute("href")));
                     let h2 = document.querySelector(href);
-                    //console.log("href",href);
-                    //console.log("h2",h2);
                     return h2.getBoundingClientRect().top;
                 })
 
