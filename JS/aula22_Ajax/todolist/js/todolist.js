@@ -1,35 +1,56 @@
 import { Task } from "./Model/Task.model.js"
 import { createXMLHttpRequest } from "./createXMLHttpRequest.js"
+import TasksService from "./Service/Tasks.service.js"
+import TaskController from './Controller/Tasks.controller.js'
+import TasksView from "./View/Tasks.View.js"
 
 // const url = "https://jsonplaceholder.typicode.com/users/1/todos/"
-const urlUsers = "http://localhost:3000/users"
+
 const urlTasks = "http://localhost:3000/tasks"
 
 const userId = 2
 
-createXMLHttpRequest("GET", `${urlUsers}/${userId}/tasks`, init)
+const taskService = new TasksService()
+const tasksView = new TasksView()
+const taskController = new TaskController(taskService, tasksView)
+
+//createXMLHttpRequest("GET", `${urlUsers}/${userId}/tasks`, init)
+taskService.getTasks(userId, init)
 
 
-function init(arrTasks) {
+//ARMAZENAR O DOM EM VARIAVEIS
+const itemInput = document.getElementById("item-input")
+const todoAddForm = document.getElementById("todo-add")
+const ul = document.getElementById("todo-list")
+const lis = ul.getElementsByTagName("li")
 
+todoAddForm.addEventListener("submit", function (e) {
+    e.preventDefault()
+    // console.log("antes de addTask")
+    taskController.add(itemInput.value, userId)
+    // console.log("depois de addTask")
+    //renderTasks() Deixar somente dentro da função de call back, pois ela é realizada assincrona
+
+    itemInput.value = ""
+    itemInput.focus()
+});
+
+
+function init(arrInstancesTasks) {
     // a partir de um array de objetos literais, crie um array contendo instancias de Tasks. 
     // Essa array deve chamar arrInstancesTasks
-    if (arrTasks.error) {
+    if (arrInstancesTasks.error) {
         return
     }
 
-    const arrInstancesTasks = arrTasks.map(task => {
-        const { title, completed, createdAt, updatedAt } = task
-        return new Task(title, completed, createdAt, updatedAt)
-    })
+    // const arrInstancesTasks = arrTasks.map(task => {
+    //     const { title, completed, createdAt, updatedAt } = task
+    //     return new Task(title, completed, createdAt, updatedAt)
+    // })
 
 
 
-    //ARMAZENAR O DOM EM VARIAVEIS
-    const itemInput = document.getElementById("item-input")
-    const todoAddForm = document.getElementById("todo-add")
-    const ul = document.getElementById("todo-list")
-    const lis = ul.getElementsByTagName("li")
+
 
 
     function generateLiTask(obj) {
@@ -97,12 +118,15 @@ function init(arrTasks) {
 
     function addTask(title) {
         // adicione uma nova instancia de Task
-        const cb = function ({ title }) {
+        const cb = function ({ title }) { //extraindo do objeto que foi passado por parametro a propriedade title
             arrInstancesTasks.push(new Task(title))
+            console.log("dentro de cb")//executado de forma assincrona
             renderTasks()
         }
         const taskString = JSON.stringify({ title, userId })
+        console.log("antes de createXMLHttpRequest")
         createXMLHttpRequest("POST", urlTasks, cb, taskString)
+        console.log("depois de createXMLHttpRequest")
 
 
     }
@@ -157,15 +181,6 @@ function init(arrTasks) {
         }
     }
 
-    todoAddForm.addEventListener("submit", function (e) {
-        e.preventDefault()
-        console.log(itemInput.value)
-        addTask(itemInput.value)
-        renderTasks()
-
-        itemInput.value = ""
-        itemInput.focus()
-    });
 
     ul.addEventListener("click", clickedUl)
 
