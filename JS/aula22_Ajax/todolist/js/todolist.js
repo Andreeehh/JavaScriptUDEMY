@@ -11,7 +11,10 @@ const urlTasks = "http://localhost:3000/tasks"
 const userId = 2
 
 const taskService = new TasksService()
-const tasksView = new TasksView()
+
+const ul = document.getElementById("todo-list")
+
+const tasksView = new TasksView(ul)
 const taskController = new TaskController(taskService, tasksView)
 
 //createXMLHttpRequest("GET", `${urlUsers}/${userId}/tasks`, init)
@@ -21,7 +24,7 @@ taskService.getTasks(userId, init)
 //ARMAZENAR O DOM EM VARIAVEIS
 const itemInput = document.getElementById("item-input")
 const todoAddForm = document.getElementById("todo-add")
-const ul = document.getElementById("todo-list")
+
 const lis = ul.getElementsByTagName("li")
 
 todoAddForm.addEventListener("submit", function (e) {
@@ -43,93 +46,8 @@ function init(arrInstancesTasks) {
         return
     }
 
-    // const arrInstancesTasks = arrTasks.map(task => {
-    //     const { title, completed, createdAt, updatedAt } = task
-    //     return new Task(title, completed, createdAt, updatedAt)
-    // })
+    tasksView.render(taskService.tasks)
 
-
-
-
-
-
-    function generateLiTask(obj) {
-
-        const li = document.createElement("li")
-        const p = document.createElement("p")
-        const checkButton = document.createElement("button")
-        const editButton = document.createElement("i")
-        const deleteButton = document.createElement("i")
-
-        li.className = "todo-item"
-
-        checkButton.className = "button-check"
-        checkButton.innerHTML = `
-            <i class="fas fa-check ${obj.completed ? "" : "displayNone"}" data-action="checkButton"></i>`
-        checkButton.setAttribute("data-action", "checkButton")
-
-        li.appendChild(checkButton)
-
-        p.className = "task-name"
-        p.textContent = obj.getTitle()
-        li.appendChild(p)
-
-        editButton.className = "fas fa-edit"
-        editButton.setAttribute("data-action", "editButton")
-        li.appendChild(editButton)
-
-
-        const containerEdit = document.createElement("div")
-        containerEdit.className = "editContainer"
-        const inputEdit = document.createElement("input")
-        inputEdit.setAttribute("type", "text")
-        inputEdit.className = "editInput"
-        inputEdit.value = obj.getTitle()
-
-        containerEdit.appendChild(inputEdit)
-        const containerEditButton = document.createElement("button")
-        containerEditButton.className = "editButton"
-        containerEditButton.textContent = "Edit"
-        containerEditButton.setAttribute("data-action", "containerEditButton")
-        containerEdit.appendChild(containerEditButton)
-        const containerCancelButton = document.createElement("button")
-        containerCancelButton.className = "cancelButton"
-        containerCancelButton.textContent = "Cancel"
-        containerCancelButton.setAttribute("data-action", "containerCancelButton")
-        containerEdit.appendChild(containerCancelButton)
-
-        li.appendChild(containerEdit)
-
-
-
-        deleteButton.className = "fas fa-trash-alt"
-        deleteButton.setAttribute("data-action", "deleteButton")
-        li.appendChild(deleteButton)
-
-        return li
-    }
-
-    function renderTasks() {
-        ul.innerHTML = ""
-        arrInstancesTasks.forEach(taskObj => {
-            ul.appendChild(generateLiTask(taskObj))
-        });
-    }
-
-    function addTask(title) {
-        // adicione uma nova instancia de Task
-        const cb = function ({ title }) { //extraindo do objeto que foi passado por parametro a propriedade title
-            arrInstancesTasks.push(new Task(title))
-            console.log("dentro de cb")//executado de forma assincrona
-            renderTasks()
-        }
-        const taskString = JSON.stringify({ title, userId })
-        console.log("antes de createXMLHttpRequest")
-        createXMLHttpRequest("POST", urlTasks, cb, taskString)
-        console.log("depois de createXMLHttpRequest")
-
-
-    }
 
     function clickedUl(e) {
         const dataAction = e.target.getAttribute("data-action")
@@ -161,7 +79,7 @@ function init(arrInstancesTasks) {
             },
             containerEditButton: function () {
                 const val = currentLi.querySelector(".editInput").value
-                arrInstancesTasks[currentLiIndex].setName(val)
+                arrInstancesTasks[currentLiIndex].setTitle(val)
                 renderTasks()
             },
             containerCancelButton: function () {
@@ -183,8 +101,5 @@ function init(arrInstancesTasks) {
 
 
     ul.addEventListener("click", clickedUl)
-
-    renderTasks()
-
 
 }

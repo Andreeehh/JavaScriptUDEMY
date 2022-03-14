@@ -5,60 +5,16 @@
       "completed": false,
       "createdAt:": "",
       "updatedAt": "",
-      "userId": 1,
+      "userId": 2,
       "id": 1
     },
     {
-      "title": "segunda tarefa",
+      "title": "tarefa 2",
       "completed": false,
-      "createdAt:": "",
-      "updatedAt": "",
-      "userId": 1,
-      "id": 2
-    },
-    {
-      "title": "priemira tarefa",
-      "completed": false,
-      "createdAt:": "",
-      "updatedAt": "",
-      "userId": 2,
-      "id": 3
-    },
-    {
-      "title": "terceira tarefa",
-      "completed": false,
-      "createdAt:": "",
-      "updatedAt": "",
-      "userId": 2,
-      "id": 4
-    },
-    {
-      "title": "priemira tarefa joão",
-      "userId": 3,
-      "id": 5
-    },
-    {
-      "title": "tarefa",
-      "userId": 2,
-      "id": 6
-    },
-    {
-      "title": "nova",
-      "userId": 2,
-      "id": 7
-    },
-    {
-      "title": "noba",
-      "userId": 2,
-      "id": 8
-    },
-    {
-      "title": "teste",
-      "completed": false,
-      "createdAt": 1646921702955,
+      "createdAt": 1647258790799,
       "updatedAt": null,
       "userId": "2",
-      "id": 9
+      "id": 2
     }
   ],
   "users": [
