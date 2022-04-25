@@ -73,14 +73,17 @@ function init(arrInstancesTasks) {
 
             },
             deleteButton: function () {
-                arrInstancesTasks.splice(currentLiIndex, 1)
-                renderTasks()
+                // arrInstancesTasks.splice(currentLiIndex, 1)
+                // renderTasks()
+                taskController.remove(currentLi.getAttribute("data-id"), userId)
 
             },
             containerEditButton: function () {
-                const val = currentLi.querySelector(".editInput").value
-                arrInstancesTasks[currentLiIndex].setTitle(val)
-                renderTasks()
+                const title = currentLi.querySelector(".editInput").value
+                const id = currentLi.getAttribute("data-id")
+                // arrInstancesTasks[currentLiIndex].setTitle(val)
+                // renderTasks()
+                taskController.update({ title, id }, userId)
             },
             containerCancelButton: function () {
                 currentLi.querySelector(".editContainer").removeAttribute("style")
@@ -89,8 +92,9 @@ function init(arrInstancesTasks) {
             checkButton: function () {
 
                 // DEVE USAR O MÉTODO toggleDone do objeto correto
-                arrInstancesTasks[currentLiIndex].toggleDone()
-                renderTasks()
+                // arrInstancesTasks[currentLiIndex].toggleDone()
+                // renderTasks()
+                taskController.toggleDone(userId, currentLiIndex)
             }
         }
 
