@@ -1,7 +1,6 @@
-const urlUsers = "http://localhost:3000/users"
-const urlTasks = "http://localhost:3000/tasks"
 import { createXMLHttpRequest } from "../createXMLHttpRequest.js"
 import { Task } from "./../Model/Task.model.js"
+import { urlTasks, urlUsers } from "../config.js"
 
 export default class TasksService {
 
@@ -10,9 +9,6 @@ export default class TasksService {
     }
 
     add(task, cb, userId) {
-        if (!task instanceof Task) {
-            throw TypeError("Task must be a instace of TaskModel")
-        }
 
         const fn = (_task) => {
             const { title, completed, createdAt, updatedAt } = _task
@@ -37,6 +33,7 @@ export default class TasksService {
     }
 
     remove(id, cb, userId) {
+        this.tasks.updatedAt = Date.now()
         const fn = () => {
             this.getTasks(userId, cb)
         }
@@ -51,8 +48,8 @@ export default class TasksService {
         createXMLHttpRequest("PATCH", `${urlTasks}/${task.id}`, fn, JSON.stringify(task))
     }
 
-    getByid(id){
-        return this.tasks.find (task => parseInt(task.id) === id)
+    getByid(id) {
+        return this.tasks.find(task => parseInt(task.id) === id)
     }
 
     toggleDone(currentLiIndex) {

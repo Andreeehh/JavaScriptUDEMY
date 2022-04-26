@@ -25,10 +25,10 @@
       "userId": "2"
     },
     {
-      "title": "terceira tarefa",
-      "completed": false,
+      "title": "terceira tarefa editada",
+      "completed": true,
       "createdAt": 1650892829893,
-      "updatedAt": null,
+      "updatedAt": 1650996629375,
       "id": 4,
       "userId": "2"
     }
