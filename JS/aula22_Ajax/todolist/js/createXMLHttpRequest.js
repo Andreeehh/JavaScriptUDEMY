@@ -1,4 +1,4 @@
-export function createXMLHttpRequest(method, url, cb, data = null) {
+export function createXMLHttpRequest(method, url, sucess, error, data = null) {
     const xhr = new XMLHttpRequest()
 
     xhr.open(method, url)
@@ -25,15 +25,11 @@ export function createXMLHttpRequest(method, url, cb, data = null) {
                 // console.log(xhr.responseText)//retorna um array de objetos em formato de string
                 const json = JSON.parse(xhr.responseText)//transforma a string em um array
 
-                if (typeof cb === "function") {
-                    cb(json)
+                if (typeof sucess === "function") {
+                    sucess(json)
                 }
-            } else if (typeof cb === "function") {
-                cb({
-                    error: true,
-                    status: xhr.status,
-                    message: "algo deu errado com a conexão"
-                })
+            } else if (typeof error === "function") {
+                error("algo deu errado com a conexão")
             }
         }
     }
