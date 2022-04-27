@@ -1,4 +1,5 @@
 import { createPromise } from "../createPromise.js"
+import { createFetch } from "../createFetch.js"
 import { Task } from "./../Model/Task.model.js"
 import { urlTasks, urlUsers } from "../config.js"
 
@@ -24,7 +25,8 @@ export default class TasksService {
             if (typeof sucess === "function") sucess(this.tasks)
             return this.tasks
         }
-        return createPromise("GET", `${urlUsers}/${userId}/tasks`)
+        return createFetch("GET", `${urlUsers}/${userId}/tasks`)
+            .then(response => response.json())
             .then(response => { return fn(response) })
             .catch(erro => {
                 if (typeof error === "function") {
