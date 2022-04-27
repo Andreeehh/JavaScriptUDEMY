@@ -10,12 +10,16 @@ export default class TasksService {
 
     add(task, sucess, error, userId) {
         createFetch("POST", `${urlUsers}/${userId}/tasks`, JSON.stringify(task))
-            .then(() =>  this.getTasks(userId))
+            .then(() => this.getTasks(userId))
             .then(() => sucess())
             .catch(err => error(err))
     }
 
-    getTasks(userId, sucess, error) {
+    async getTasks(userId, sucess, error) {
+        // console.log("teste")
+        // await createFetch("GET", `${urlUsers}/${userId}/tasks`)
+        //     .then(response => { console.log(response) })
+        // console.log("teste 2")
         const fn = (arrTasks) => {
             this.tasks = arrTasks.map(task => {
                 const { title, completed, createdAt, updatedAt, id } = task
