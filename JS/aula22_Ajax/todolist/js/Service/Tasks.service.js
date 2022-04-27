@@ -1,4 +1,3 @@
-import { createPromise } from "../createPromise.js"
 import { createFetch } from "../createFetch.js"
 import { Task } from "./../Model/Task.model.js"
 import { urlTasks, urlUsers } from "../config.js"
@@ -10,7 +9,7 @@ export default class TasksService {
     }
 
     add(task, sucess, error, userId) {
-        createPromise("POST", `${urlUsers}/${userId}/tasks`, JSON.stringify(task))
+        createFetch("POST", `${urlUsers}/${userId}/tasks`, JSON.stringify(task))
             .then(() =>  this.getTasks(userId))
             .then(() => sucess())
             .catch(err => error(err))
@@ -26,8 +25,7 @@ export default class TasksService {
             return this.tasks
         }
         return createFetch("GET", `${urlUsers}/${userId}/tasks`)
-            .then(response => response.json())
-            .then(response => { return fn(response) })
+            .then(response => fn(response))
             .catch(erro => {
                 if (typeof error === "function") {
                     return error(erro)
@@ -38,14 +36,14 @@ export default class TasksService {
 
     remove(id, sucess, error, userId) {
         this.tasks.updatedAt = Date.now()
-        createPromise("DELETE", `${urlTasks}/${id}`)
+        createFetch("DELETE", `${urlTasks}/${id}`)
             .then(() => this.getTasks(userId))
             .then(() => sucess())
             .catch(err => error(err.message))
     }
 
     update(task, sucess, error, userId) {
-        createPromise("PATCH", `${urlTasks}/${task.id}`, JSON.stringify(task))
+        createFetch("PATCH", `${urlTasks}/${task.id}`, JSON.stringify(task))
             .then(() => this.getTasks(userId))
             .then(() => sucess())
             .catch(err => error(err.message))

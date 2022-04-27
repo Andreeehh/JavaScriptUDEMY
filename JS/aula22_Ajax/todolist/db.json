@@ -25,19 +25,11 @@
       "userId": "2"
     },
     {
-      "title": "terceira tarefa editada",
+      "title": "terceira tarefa edit",
       "completed": true,
       "createdAt": 1650892829893,
-      "updatedAt": 1650996629375,
+      "updatedAt": 1651063374355,
       "id": 4,
-      "userId": "2"
-    },
-    {
-      "title": "tarefa adicionada edt",
-      "completed": false,
-      "createdAt": 1650997173663,
-      "updatedAt": 1651060381661,
-      "id": 5,
       "userId": "2"
     }
   ],

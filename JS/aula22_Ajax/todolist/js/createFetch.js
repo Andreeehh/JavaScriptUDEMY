@@ -1,4 +1,16 @@
-export function createFetch(method, url, data = null) {
+export function createFetch(method, url, body = null) {
     
-    return fetch(url)
+    function handleError(response){
+        if(!response.ok){
+            throw Error(response.status + ": " +response.statusText)
+        }
+        return response.json()
+    }
+
+    return fetch(url, {
+        method,
+        body,
+        headers: {"Content-Type": "application/json;charset=UTF-8"}
+    })
+        .then(response => handleError(response))
 }
