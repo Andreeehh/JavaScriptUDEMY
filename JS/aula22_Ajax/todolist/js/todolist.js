@@ -93,7 +93,7 @@ fetch("http://localhost:3000/users")
                     users = _users
                 })
         } catch (e) {
-            console.log(e)
+            console.log(e.message)
         }
         console.log(users)
     })()
