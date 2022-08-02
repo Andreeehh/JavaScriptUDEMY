@@ -1,0 +1,38 @@
+/inserir caracter/
+adkasod -> sequencia literal
+.b -> qualquer caracter + resto da sequencia
+[pg]ato -> qualquer caracter dentro dos [] + sequencia
+[.] -> caracter ponto
+\. -> caracter ponto
+[1-9] -> qualquer caracter de 1 a 9
+[1-9]{4} -> qualquer caracter de 1 a 9 4 vezes, {} multiplicador
+[\d] -> qualquer dígito de 0-9
+[1-9]{4,6} -> qualquer caracter de 1 a 9 4, ou 6 vezes, {} multiplicador
+{4, } -> mínimo 4
+{0, 6} -> máximo 6
++ -> 1 ou mais vezes
+* -> 0 ou mais vezes
+? -> ou ou uma vez
+^ -> começo da string
+$ -> termina com
+\b -> começo ou final de uma palavra
+\s -> qualquer tipo de espaço
+\w -> qualquer tipo de alfanumérico
+ganancioso ou preguiçoso
+<h1.*?> para parar na primeira ocorrencia de encontrar >
+grupos () -> \1 para primeiro grupo, para reaproveitar mesmo regex
+<(h[1-6]).*?>[\s\w]+<\/\1>
+negação
+[^aeiou] -> não seja vogal
+\W -> negação de \w
+\S negação de \s 
+\B desde que não comece no início da palavra, negação de \b 
+Métodos
+regex
+.test(str)
+.exec(str) *
+string
+replace(regex| str, newStr | fn)
+.match(regex) *
+.search(regex)
+* mais custoso pois trás mais informações
