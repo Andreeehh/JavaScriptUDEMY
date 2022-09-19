@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+
+        let url = 'https://www.google.com/search?q=regex&oq=regex&aqs=chrome..69i57j69i59j35i39j0i131i433i512j0i433i512j69i60l3.1296j0j7&sourceid=chrome&ie=UTF-8';
+
+        const regex = /[&?](\w+)=(\w+)/g
+
+        let arr = regex.exec(url)
+
+        const obj = []
+
+        while (arr) {
+            obj[arr[1]] = arr[2]
+            arr = regex.exec(url)
+        }
+        console.log(obj)
+
+    </script>
+</body>
+
+</html>

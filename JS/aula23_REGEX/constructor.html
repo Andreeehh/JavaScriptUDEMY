@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+
+        let str = 'hoje meu é 26/02/2018 e amanha será 27/02/18. Meu aniversario é 1/01';
+        
+        let teste = "meu"
+        const regex = new RegExp(teste, "gi")//construtor passando variável, case sensitive, i é case insensitive
+
+        console.log(regex.lastIndex)
+        console.log(regex.exec(str))
+        console.log(regex.lastIndex)
+        console.log(regex.exec(str))
+
+    </script>
+</body>
+
+</html>
