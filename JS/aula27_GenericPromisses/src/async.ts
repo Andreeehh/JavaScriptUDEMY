@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from 'axios'
 import { ResponseUser } from './index'
 
-async function Fn() {
+async function Fn(): Promise<number> {
     return 200
 }
 
@@ -18,7 +18,7 @@ async function getUser(id: number): Promise<ResponseUser> {
     }
 }
 
-getUser(20).then(dado => {
+getUser(2).then(dado => {
     console.log("dado")
     console.log(dado)
 }).catch(e => {
